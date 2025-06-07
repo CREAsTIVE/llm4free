@@ -5,6 +5,7 @@ use crate::proxy_manager::{proxy_data::ProxyData, proxy_fetcher::ProxyFetcher};
 pub mod shader_proxy_manager;
 pub mod proxy_data;
 pub mod proxy_fetcher;
+pub mod fetchers_implementations;
 
 pub struct ProxyManager<TProxyFetcher : ProxyFetcher> {
   pub max_errors: u32,
