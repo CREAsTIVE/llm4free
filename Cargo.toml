@@ -1,2 +1,2 @@
 [workspace]
-members=["llm4free"]
+members=["llm4free", "llm4free_chat"]
