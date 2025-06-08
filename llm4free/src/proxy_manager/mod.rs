@@ -2,7 +2,7 @@ use std::collections::VecDeque;
 
 use crate::proxy_manager::{proxy_data::ProxyData, proxy_fetcher::ProxyFetcher};
 
-pub mod shader_proxy_manager;
+pub mod shader_proxy_fetcher;
 pub mod proxy_data;
 pub mod proxy_fetcher;
 pub mod fetchers_implementations;
@@ -40,6 +40,8 @@ impl<TProxyFetcher : ProxyFetcher> ProxyManager<TProxyFetcher> {
   }
 
   pub fn refetch_proxies(&mut self) {
-    self.stored_proxies = self.proxy_fetcher.fetch_proxies();
+    self.stored_proxies = self.proxy_fetcher.fetch_proxies().into_iter()
+      .map(|proxy| ProxyData::new(proxy))
+      .collect();
   }
 }
