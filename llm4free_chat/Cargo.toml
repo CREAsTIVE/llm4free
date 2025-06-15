@@ -5,3 +5,4 @@ edition = "2024"
 
 [dependencies]
 llm4free = {path="../llm4free"}
+prompted = "0.2.8"

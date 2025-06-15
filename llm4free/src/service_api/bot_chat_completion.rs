@@ -15,5 +15,5 @@ pub struct Chat {
 /// Represents chat with Bot and User only
 /// Check ChatCompletion for unlimited users count
 pub trait BotChatCompletion {
-  fn complete(chat: Chat) -> String;
+  fn complete(&self, chat: &Chat) -> String;
 }
